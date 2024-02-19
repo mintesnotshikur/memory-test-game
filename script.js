@@ -20,28 +20,56 @@ startBtn.addEventListener('click', function() {
 
     submitBtn.addEventListener('click', function submit() {
         let inputValue = input.value;
-        let count = false;
-        let newNums = inputValue.split(' ');
-
-        for (let i = 0; i < newNums.length; i++) {
-            let newVal = newNums[i];
-            allNums.forEach(value => {
-                if (value == newVal) {
-                    count = true;
-                }else {
-                    count = false;
-                }
-            });
+        let result = true;
+        let newNums;
+        if (inputValue.length > 1) {
+            newNums = inputValue.split(' ');
+        }else {
+            newNums = inputValue;
         }
-        if (count == false) {
-            document.querySelector('.status').innerHTML = '<iframe src="https://giphy.com/embed/lnhOzj6RHueJq5Jgph" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/brownsugarapp-smh-old-lady-shaking-my-head-lnhOzj6RHueJq5Jgph">via GIPHY</a></p>';
+
+        if (newNums.length != allNums.length) {
+            result = false;
+        } else {
+            for (let i = 0; i < newNums.length; i++) {
+                let st = true;
+                for (let i = 0; i < allNums.length; i++) {
+                    if (allNums[i] == newNums[i]) {
+                        result = true;
+                    } else {
+                        result = false;
+                        st = false;
+                        break;
+                    }
+                }
+                if (st == false) {
+                    console.log('st is false');
+                    break;
+                }
+            }
+        }
+        
+        if (result == false) {
+            document.querySelector('.status').innerHTML = '<div style="width:100%;height:0;padding-bottom:85%;position:relative;"><iframe src="https://giphy.com/embed/WRp58hy5gmfjpMzHAZ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>';
             
         } else {
-            document.querySelector('.status').innerHTML = '<iframe src="https://giphy.com/embed/xDpB3lRInUYla" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shia-labeouf-xDpB3lRInUYla">via GIPHY</a></p>';
+            document.querySelector('.status').innerHTML = '<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/xDpB3lRInUYla" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>';
         }
     });
 });
 
-function callAlert() {
-    alert('The game is a number guessing game and here\'s how to play:\n\nClick the "Generate" button. A random number between 0 and 9 will be displayed.\nRemember this number(s). You can generate as many numbers as you want.\nOnce you\'re ready, click the "Start" button. The screen will change to a new interface.\nIn the new interface, enter the numbers you remember, separating each number with a space.\nClick the "Submit" button to check your answers.\nIf the numbers you entered match the generated numbers, you win and a success message will be displayed.\nIf the numbers you entered do not match the generated numbers, you lose and a failure message will be displayed, showing the numbers you entered and the correct numbers.');
-}
+let helpTitle = document.querySelector('.help');
+let helpDescription = document.querySelector('#help');
+let helpStatus = false;
+
+helpTitle.addEventListener('click', function() {
+    if (helpStatus == false) {
+        helpDescription.style.display = 'block';
+        helpTitle.innerHTML = 'X';
+        helpStatus = true;
+    } else {
+        helpDescription.style.display = 'none';
+        helpTitle.innerHTML = 'Help';
+        helpStatus = false;
+    }
+});
