@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 body {
     font-family: "Gruppo", sans-serif;
-    font-weight: 400;
+    font-weight: 900;
     font-style: normal;
     background-color: yellow;
     padding: 5% 30%;
@@ -37,7 +37,7 @@ button {
 
 input {
     font-family: "Gruppo", sans-serif;
-    font-weight: 400;
+    font-weight: 1000;
     font-style: normal;
     font-size: 20px;
     padding: 10px 20px;
@@ -45,27 +45,17 @@ input {
     border-radius: 5px;
     border: none;
     width: 100px;
-    text-align: center;
+    color: black;
 }
 
-h1 {
-    display: inline;
-    position: absolute;
-    left: 0;
-    margin-left: 2%;
-}
-details {
-    display: inline;
-    position: absolute;
-    right: 0;
-    margin-right: 2%;
-    width: 480px;
-    text-align: justify;
-    background-color: yellow;
-}
-details > summary {
-    font-size: 20px;
-    cursor: pointer;
-    list-style: none;
+.help {
     text-align: right;
+}
+
+.start {
+    display: none;
+}
+.status {
+    height: 350px;
+    overflow: hidden
 }
