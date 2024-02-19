@@ -5,14 +5,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Memory Test Game</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
 </head>
 <body>
-	<p onclick='callAlert()'>Help</p>
-	<p class="num"></p>
-	<div class="container">
-		<button class="genBtn">Generate</button>
-		<button class="startBtn">Start</button>
+	<div class="all">
+		<p class="help" onclick='callAlert()'>Help</p>
+		<p class="num"></p>
+		<div class="container">
+			<button class="genBtn">Generate</button>
+			<button class="startBtn">Start</button>
+		</div>
 	</div>
+
+	<div class="start">
+		<p onclick="location.reload();">&larr;</p>
+		<p class="inst"> Enter the numbers you have found, separating them with a space. </p>
+		<div class="container">
+			<input type="text" class="input">
+			<button class="submitBtn">Submit</button>
+		</div>
+	</div>
+	
+	<div class="status"></div>
 	
 
 	<script src="script.js"></script>
