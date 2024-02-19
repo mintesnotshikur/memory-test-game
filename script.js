@@ -11,7 +11,9 @@ genBtn.addEventListener('click', function() {
 });
 
 startBtn.addEventListener('click', function() {
-    document.body.innerHTML = '<p onclick="location.reload();">&larr;</p> <p class="inst"> Enter the numbers you have found, separating them with a space. </p> <div class="container"> <input type="text" class="input"> <button class="submitBtn">Submit</button> </div>';
+
+    document.querySelector('.start').style.display = 'block';
+    document.querySelector('.all').style.display = 'none';
 
     let input = document.querySelector('.input');
     let submitBtn = document.querySelector('.submitBtn');
@@ -32,10 +34,10 @@ startBtn.addEventListener('click', function() {
             });
         }
         if (count == false) {
-            alert('    You lose! \n' + 'You entered: ' + newNums.join(' ') + '\nThe correct number(s) are: ' + allNums.join(' '));
+            document.querySelector('.status').innerHTML = '<iframe src="https://giphy.com/embed/lnhOzj6RHueJq5Jgph" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/brownsugarapp-smh-old-lady-shaking-my-head-lnhOzj6RHueJq5Jgph">via GIPHY</a></p>';
             
         } else {
-            alert('You got it correct!');
+            document.querySelector('.status').innerHTML = '<iframe src="https://giphy.com/embed/xDpB3lRInUYla" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shia-labeouf-xDpB3lRInUYla">via GIPHY</a></p>';
         }
     });
 });
