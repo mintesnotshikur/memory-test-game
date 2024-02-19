@@ -4,7 +4,7 @@ body {
     font-weight: 900;
     font-style: normal;
     background-color: yellow;
-    padding: 5% 30%;
+    padding: 5% 10%;
     user-select: none;
 }
 .num {
@@ -50,12 +50,17 @@ input {
 
 .help {
     text-align: right;
+    cursor: pointer;
+}
+#help {
+    display: none;
+    position: absolute;
+    top: 20;
+    width: 80%;
+    text-align: center;
+    background-color: yellow;
 }
 
 .start {
     display: none;
-}
-.status {
-    height: 350px;
-    overflow: hidden
 }
