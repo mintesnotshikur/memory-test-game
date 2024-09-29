@@ -1,16 +1,24 @@
 var genBtn = document.querySelector('.genBtn');
-var num = document.querySelector('.num');
+var generatedNumber = document.querySelector('.generatedNumber');
 var startBtn = document.querySelector('.startBtn');
 let allNums = [];
 
+let isNumberGenerated = false;
+
 genBtn.addEventListener('click', function() {
+    isNumberGenerated = true
     var value = Math.floor(Math.random() * 10);
-    num.innerHTML = value;
+    generatedNumber.innerHTML = value;
 
     allNums.push(value);
 });
 
 startBtn.addEventListener('click', function() {
+
+    if (!isNumberGenerated) {
+        alert("You need to generate number first!");
+        return
+    }
 
     document.querySelector('.start').style.display = 'block';
     document.querySelector('.all').style.display = 'none';
@@ -23,7 +31,7 @@ startBtn.addEventListener('click', function() {
         let result = true;
         let newNums;
         if (inputValue.length > 1) {
-            newNums = inputValue.split(' ');
+            newNums = inputValue.split(',');
         }else {
             newNums = inputValue;
         }
@@ -48,28 +56,28 @@ startBtn.addEventListener('click', function() {
                 }
             }
         }
-        
         if (result == false) {
-            document.querySelector('.status').innerHTML = '<div style="width:100%;height:0;padding-bottom:85%;position:relative;"><iframe src="https://giphy.com/embed/WRp58hy5gmfjpMzHAZ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>';
+            document.querySelector('.status').innerHTML = '<video loop autoplay src="gif/shaking head.mp4"></video>';
             
         } else {
-            document.querySelector('.status').innerHTML = '<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/xDpB3lRInUYla" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>';
+            document.querySelector('.status').innerHTML = '<video loop autoplay src="gif/clap.mp4"></video>';
         }
     });
 });
 
-let helpTitle = document.querySelector('.help');
-let helpDescription = document.querySelector('#help');
+let helpBtn = document.querySelector('.helpBtn');
+let helpDescription = document.querySelector('.help');
 let helpStatus = false;
 
-helpTitle.addEventListener('click', function() {
+helpBtn.addEventListener('click', function() {
     if (helpStatus == false) {
-        helpDescription.style.display = 'block';
-        helpTitle.innerHTML = 'X';
+        helpDescription.style.display = 'flex';
+        helpBtn.innerHTML = 'X';
         helpStatus = true;
     } else {
         helpDescription.style.display = 'none';
-        helpTitle.innerHTML = 'Help';
+        helpBtn.innerHTML = 'Help';
         helpStatus = false;
     }
 });
+
