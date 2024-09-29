@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+* {
+    transition: all 0.3 ease-in-out;
+}
 body {
     font-family: "Gruppo", sans-serif;
-    font-weight: 900;
+    /* font-weight: 900; */
     font-style: normal;
     background-color: yellow;
-    padding: 5% 10%;
+    padding: 1% 10%;
     user-select: none;
 }
-.num {
+.generatedNumber {
     font-size: 60px;
     height: 60px;
     text-align: center;
@@ -19,6 +23,7 @@ body {
 }
 
 button {
+    font-family: "Gruppo", sans-serif;
     font-size: 20px;
     padding: 10px 20px;
     margin: 10px;
@@ -27,8 +32,15 @@ button {
     background-color: black;
     color: white;
     cursor: pointer;
+    /* box-shadow: 4px 5px 1px #808000; */
+    border-bottom: 5px solid lightgray;
+    border-radius: 50px;
+
+    &:active {
+        border: none;
+    }
 }
-.inst {
+.instruction {
     font-size: 20px;
     /* height: 60px; */
     width: 100%;
@@ -46,21 +58,63 @@ input {
     border: none;
     width: 100px;
     color: black;
+    outline: none;
 }
 
-.help {
+.helpBtn {
+    font-size: medium;
     text-align: right;
     cursor: pointer;
+    padding: 10px 13px;
+    border: none;
 }
-#help {
-    display: none;
+.help {
+    user-select: text;
+    display: none;  
     position: absolute;
-    top: 20;
-    width: 80%;
-    text-align: center;
-    background-color: yellow;
+    left: 30%;
+    width: max-content;
+    height: 50vh;
+    margin-top: 5%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #cccc00;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #808000;
+
+    @media (max-width: 720px) {
+        width: 80%;
+        height: 60vh;
+        left: 4%;
+    }
+
+    p {
+        margin: 1%;
+        font-size: 20px;
+        border-bottom: 1px solid black;
+        padding-bottom: 13px;
+
+        &:last-child {
+            border: none;
+            padding: 0;
+        }
+    }
+    
+
 }
 
 .start {
     display: none;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video {
+        width: 500px;
+        height: auto;
+        margin-top: 50px;
+    }
 }
