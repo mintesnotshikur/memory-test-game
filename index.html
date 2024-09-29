@@ -12,18 +12,18 @@
 </head>
 <body>
 	<div class="all">
-		<p class="help">Help</p>
-		<div id="help">
-			<p>1. Click on the "Generate" button to generate a sequence of numbers.</p>
-			<p>2. Click on the "Start" button to start the game.</p>
-			<p>3. Enter the numbers you have found, separating them with a space.</p>
-			<p>4. Click on the "Submit" button to check your answers.</p>
-			<p>5.Click on the "←" button to go back to the main page.</p>
-			<p>6. Click on the "Help" button to see the instructions again.</p>
-			<p>7. Click on the "X" button to close the instructions.</p>
-		</div>
+		<button class="helpBtn">Help</button>
+		<div class="help">
+			<p><b>1.</b> Click on the "Generate" button to generate a sequence of numbers.</p>
+			<p><b>2.</b> Click on the "Start" button to test your memory.</p>
+			<p><b>3.</b> Enter the numbers you have found, separating them with a comma ( , ).</p>
+			<p><b>4.</b> Click on the "Submit" button to check your answers.</p>
+			<p><b>5.</b> Click on the "←" button to go back to the main page.</p>
+			<p><b>6.</b> Click on the "Help" button to see the instructions again.</p>
+			<p><b>7.</b> Click on the "X" button to close the instructions.</p>
+		</div> 
 
-		<p class="num"></p>
+		<p class="generatedNumber"></p>
 		<div class="container">
 			<button class="genBtn">Generate</button>
 			<button class="startBtn">Start</button>
@@ -31,8 +31,15 @@
 	</div>
 
 	<div class="start">
-		<p onclick="location.reload();">&larr;</p>
-		<p class="inst"> Enter the numbers you have found, separating them with a space. </p>
+		<button 
+		style="cursor: pointer;
+    			padding: 10px 13px;
+    			font-size: medium;
+				border: none;" 
+		onclick="location.reload();">
+		&larr;</button>
+
+		<p class="instruction"> Enter the numbers you have found, separating them with a comma ( , ). </p>
 		<div class="container">
 			<input type="text" class="input">
 			<button class="submitBtn">Submit</button>
