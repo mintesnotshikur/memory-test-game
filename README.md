@@ -1,1 +1,1 @@
-Preview -> https://mntua.github.io/memory-test-game/
+Preview -> https://mintesnotshikur.github.io/memory-test-game/
